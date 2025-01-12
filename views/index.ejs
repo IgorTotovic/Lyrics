@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>lyrics app</title>
+  </head>
+  <body>
+    <div id="title">
+      <h1 class="otherFont">Welcome to the lyrics search</h1>
+      <p>
+        Input desired artist and song title to the form and enjoy your favorite
+        lyrics
+      </p>
+    </div>
+    <form class="otherFont" action="/" method="post">
+      <label for="artist">Artist</label>
+      <input type="text" name="artist" />
+      <label for="song">Song name</label>
+      <input type="text" name="song" />
+      <button type="submit" value="submit">Submit</button>
+    </form>
+    <div class="otherFont">
+      <%if(locals.songName && locals.artistName && locals.lyrics){%>
+      <h2>Artist: <%=artistName%></h2>
+      <h3>Song name: <%=songName%></h3>
+      <pre><p><%=lyrics%></p></pre>
+
+      <%}else{%>
+      <p>Waiting for user input...</p>
+      <% } %>
+    </div>
+  </body>
+</html>
